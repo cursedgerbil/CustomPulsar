@@ -31,8 +31,8 @@ kmWrite32(0x8057efb4, 0x48000028); //skips the SMT charge check and sends uncond
 void CreateUMT(Kart::Movement& movement) {
     bool isUMTs = System::sInstance->IsContext(PULSAR_UMTS);
     const s16 smtCharge = movement.smtCharge;
-    if(smtCharge >= 550 && isUMTs) movement.driftState = 4;
-    else if(smtCharge >= 300) movement.driftState = 3;
+    if(smtCharge >= 300 && isUMTs) movement.driftState = 4;
+    else if(smtCharge >= 180) movement.driftState = 3;
 };
 kmBranch(0x8057efdc, CreateUMT);
 
@@ -105,10 +105,10 @@ static void LoadCustomEffects(ExpPlayerEffects& effects) {
 };
 kmCall(0x8068e9c4, LoadCustomEffects);
 
-//Left and Righ sparks when the SMT charge is over 550
+//Left and Righ sparks when the SMT charge is over 300
 void LoadLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
     const u32 smtCharge = effects.kartPlayer->pointers.kartMovement->smtCharge;
-    if(smtCharge >= 550 && System::sInstance->IsContext(PULSAR_UMTS)) {
+    if(smtCharge >= 300 && System::sInstance->IsContext(PULSAR_UMTS)) {
         effects.CreateAndUpdateEffectsByIdx(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, updateScale);
         effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
     }
@@ -118,7 +118,7 @@ kmCall(0x80698a94, LoadLeftPurpleSparkEffects);
 
 void LoadRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
     const u32 smtCharge = effects.kartPlayer->pointers.kartMovement->smtCharge;
-    if(smtCharge >= 550 && System::sInstance->IsContext(PULSAR_UMTS)) {
+    if(smtCharge >= 300 && System::sInstance->IsContext(PULSAR_UMTS)) {
         effects.CreateAndUpdateEffectsByIdx(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, updateScale);
         effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
     }
