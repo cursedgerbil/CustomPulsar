@@ -217,7 +217,16 @@ enum KOSettingRacesPerKO {
     KOSETTING_RACESPERKO_3,
     KOSETTING_RACESPERKO_4
 };
-//KOSETTINGS
+
+
+//Custom Settings
+
+enum TransmissionSwitch {
+    TRANSMISSION_DEFAULT,
+    TRANSMISSION_INSIDE,
+    TRANSMISSION_OUTSIDE,
+    TRANSMISSION_BIKES
+};
 
 }//namespace Pulsar
 
