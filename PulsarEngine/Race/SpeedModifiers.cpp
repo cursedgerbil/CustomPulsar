@@ -8,7 +8,6 @@
 #include <MarioKartWii/File/StatsParam.hpp>
 #include <Race/200ccParams.hpp>
 #include <PulsarSystem.hpp>
-#include <RetroRewind.hpp>
 #include <MarioKartWii/File/RKG.hpp>
 
 namespace Pulsar {
