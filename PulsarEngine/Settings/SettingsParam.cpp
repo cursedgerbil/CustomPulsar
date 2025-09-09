@@ -8,8 +8,8 @@ namespace Pulsar {
 namespace Settings {
 
 u8 Params::radioCount[Params::pageCount] ={
-    3, 5, 3, 5, 2, 1 //menu, race, host, OTT, KO, gameplay
-    //Add user radio count here
+    3, 5, 3, 5, 2 //menu, race, host, OTT, KO
+    1 //Gameplay
 
 };
 u8 Params::scrollerCount[Params::pageCount] ={ 1, 1, 1, 0, 2, 0 }; //menu, race, host, OTT, KO, gameplay
