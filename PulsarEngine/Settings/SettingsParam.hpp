@@ -36,7 +36,7 @@ enum Type {
 
 //If you want to add settings to your packs, they go in this enum, and GetUserSettingValue should be used to obtain the value of a given setting
 enum UserType {
-
+    SETTINGSTYPE_GAMEPLAY
 };
 
 }//namespace Settings
@@ -82,6 +82,11 @@ enum KOSettings {
     SETTINGKO_KOPERRACE = 0 + 6,
     SETTINGKO_RACESPERKO = 1 + 6,
 
+};
+
+enum GameplaySettings {
+    SETTINGGAME_TRANSMISSION = 0,
+    
 };
 
 //MENU SETTINGS
@@ -219,7 +224,7 @@ enum KOSettingRacesPerKO {
 };
 
 
-//Custom Settings
+//Gameplay Settings
 
 enum TransmissionSwitch {
     TRANSMISSION_DEFAULT,
